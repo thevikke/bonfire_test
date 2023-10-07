@@ -27,11 +27,11 @@ class MyGame extends StatelessWidget {
         directional: JoystickDirectional(),
       ),
       map: WorldMapByTiled(
-        'tiled/mapa2.json',
+        'tiled/tiled_projects/test_map.json',
         forceTileSize: Vector2(32, 32),
-        objectsBuilder: {
-          'goblin': (properties) => MyEnemy(properties.position),
-        },
+        // objectsBuilder: {
+        //   'goblin': (properties) => MyEnemy(properties.position),
+        // },
       ),
       player: MyPlayer(Vector2(140, 140)),
       cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 1.5),

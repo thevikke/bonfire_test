@@ -71,6 +71,7 @@ flutter:
     - assets/images/tiled/
     - assets/images/tiled/top_down/
     - assets/images/tiled/tileset/
+    - assets/images/tiled/tiled_projects/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
