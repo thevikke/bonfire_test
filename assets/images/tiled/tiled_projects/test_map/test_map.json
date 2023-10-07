@@ -67,7 +67,7 @@
         {
          "columns":32,
          "firstgid":1,
-         "image":"..\/tileset\/0x72_DungeonTilesetII_v1.3.png",
+         "image":"..\/..\/tileset\/0x72_DungeonTilesetII_v1.3.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
