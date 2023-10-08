@@ -3,6 +3,39 @@
  "infinite":false,
  "layers":[
         {
+         "draworder":"topdown",
+         "id":3,
+         "name":"GameObjects",
+         "objects":[
+                {
+                 "height":16,
+                 "id":5,
+                 "name":"player",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":14.5,
+                 "x":100.5,
+                 "y":117
+                }, 
+                {
+                 "height":17.5,
+                 "id":6,
+                 "name":"goblin",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":22.5,
+                 "x":286.5,
+                 "y":115.5
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -27,38 +60,16 @@
          "id":1,
          "name":"Background",
          "offsetx":-6,
-         "offsety":-12.5,
+         "offsety":-14.1666666666667,
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
          "width":30,
          "x":0,
          "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":2,
-         "name":"Players object layer",
-         "objects":[
-                {
-                 "height":0,
-                 "id":1,
-                 "name":"Player",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":115,
-                 "y":111.5
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
         }],
- "nextlayerid":3,
- "nextobjectid":2,
+ "nextlayerid":5,
+ "nextobjectid":15,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -75,6 +86,33 @@
          "spacing":0,
          "tilecount":1024,
          "tileheight":16,
+         "tiles":[
+                {
+                 "id":1,
+                 "objectgroup":
+                    {
+                     "draworder":"index",
+                     "id":2,
+                     "name":"",
+                     "objects":[
+                            {
+                             "height":16,
+                             "id":1,
+                             "name":"",
+                             "rotation":0,
+                             "type":"",
+                             "visible":true,
+                             "width":16,
+                             "x":0,
+                             "y":0
+                            }],
+                     "opacity":1,
+                     "type":"objectgroup",
+                     "visible":true,
+                     "x":0,
+                     "y":0
+                    }
+                }],
          "tilewidth":16
         }],
  "tilewidth":16,

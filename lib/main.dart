@@ -28,12 +28,18 @@ class MyGame extends StatelessWidget {
       ),
       map: WorldMapByTiled(
         'tiled/tiled_projects/test_map/test_map.json',
-        forceTileSize: Vector2(32, 32),
-        // objectsBuilder: {
-        //   'goblin': (properties) => MyEnemy(properties.position),
-        // },
+        forceTileSize: Vector2(
+          32,
+          32,
+        ),
+        objectsBuilder: {
+          // Loads goblin to a gameobject named 'goblin' in Tiled.
+          'goblin': (properties) => MyEnemy(properties.position),
+          // This does not work.
+          // 'player': (properties) => MyPlayer(properties.position),
+        },
       ),
-      player: MyPlayer(Vector2(140, 140)),
+      player: MyPlayer(Vector2(200, 200)),
       cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 1.5),
       backgroundColor: const Color.fromARGB(255, 10, 53, 89),
     );
