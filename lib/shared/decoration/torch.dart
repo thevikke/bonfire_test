@@ -4,7 +4,7 @@ import 'package:bonfire_test/shared/util/change_level.dart';
 import 'package:bonfire_test/shared/util/common_spritesheet.dart';
 import 'package:flutter/material.dart';
 
-class Torch extends GameDecoration with Lighting, Sensor {
+class Torch extends GameDecoration with Sensor {
   bool levelTransitionTriggered = false;
 
   @override

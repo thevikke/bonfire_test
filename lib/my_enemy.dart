@@ -1,22 +1,20 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/shared/util/enemy_sprite_sheet.dart';
 
-class MyEnemy extends SimpleEnemy with ObjectCollision {
+class MyEnemy extends SimpleEnemy {
   MyEnemy(Vector2 position)
       : super(
           animation: EnemySpriteSheet.simpleDirectionAnimation,
           position: position,
           size: Vector2.all(32),
           life: 100,
-        ) {
+        );
+
+  @override
+  Future<void> onLoad() {
     /// here we configure collision of the enemy
-    setupCollision(
-      CollisionConfig(
-        collisions: [
-          CollisionArea.rectangle(size: Vector2.all(32)),
-        ],
-      ),
-    );
+    add(RectangleHitbox(size: size));
+    return super.onLoad();
   }
 
   @override

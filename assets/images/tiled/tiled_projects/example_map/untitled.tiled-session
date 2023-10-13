@@ -48,7 +48,8 @@
             }
         },
         "F:/Projektit/flutter_mobile_projects/bonfire_test/assets/images/tiled/tiled_projects/test_map/untitled.tmx#0x72_DungeonTilesetII_v1.3": {
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "untitled.tmx": {
             "scale": 2,
