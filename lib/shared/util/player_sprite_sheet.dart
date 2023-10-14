@@ -50,7 +50,7 @@ static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
       SimpleDirectionAnimation(
         idleRight: idleRight,
         runRight: runRight,
-        others: {"test": attackAnimation},
+        others: {"attack": attackAnimation},
 );
 
   static Future<SpriteAnimation> get epicAttack {
