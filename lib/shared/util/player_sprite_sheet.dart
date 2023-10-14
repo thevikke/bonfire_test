@@ -11,7 +11,7 @@ class PlayerSpriteSheet {
       );
 
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-        "player/bear_idle.png",
+        "player/bear_idle_alt.png",
         SpriteAnimationData.sequenced(
           amount: 2,
           stepTime: 0.25,
@@ -20,7 +20,7 @@ class PlayerSpriteSheet {
       );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-        "player/bear_walk.png",
+        "player/bear_walk_alt.png",
         SpriteAnimationData.sequenced(
           amount: 2,
           stepTime: 0.25,
@@ -36,9 +36,17 @@ class PlayerSpriteSheet {
           textureSize: Vector2(64, 64),
         ),
       );
+  static Future<SpriteAnimation> get backflipAnimation => SpriteAnimation.load(
+      "player/bear_flip.png",
+      SpriteAnimationData.sequenced(
+        amount: 5,
+        stepTime: 0.25,
+        textureSize: Vector2(64, 64),
+      ),
+    );
 
 static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
-        "player/bear_slice.png",
+        "player/bear_slice_alt.png",
         SpriteAnimationData.sequenced(
           amount: 3,
           stepTime: 0.15,
@@ -50,7 +58,8 @@ static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
       SimpleDirectionAnimation(
         idleRight: idleRight,
         runRight: runRight,
-        others: {"attack": attackAnimation},
+        others: {"attack": attackAnimation,
+                 "backflip": backflipAnimation},
 );
 
   static Future<SpriteAnimation> get epicAttack {
