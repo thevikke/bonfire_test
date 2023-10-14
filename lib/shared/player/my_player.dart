@@ -30,8 +30,9 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space) {
-       this.animation?.playOther("attack");
-       execMeleeAttack(attack);
+        super.stopMove();
+        animation?.playOnceOther("attack");
+        execMeleeAttack(attack);
      }
     }
     super.onJoystickAction(event);
