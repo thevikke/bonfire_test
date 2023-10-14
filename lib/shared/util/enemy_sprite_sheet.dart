@@ -37,9 +37,19 @@ class EnemySpriteSheet {
         ),
       );
 
+      static Future<SpriteAnimation> get dieAnimation => SpriteAnimation.load(
+        "enemy/cumber_yell_die_right.png",
+        SpriteAnimationData.sequenced(
+          amount: 5,
+          stepTime: 0.25,
+          textureSize: Vector2.all(32),
+        ),
+      );
+
   static SimpleDirectionAnimation get simpleDirectionAnimation =>
       SimpleDirectionAnimation(
         idleRight: idleRight,
         runRight: runRight,
+        others: {"die": dieAnimation},
       );
 }

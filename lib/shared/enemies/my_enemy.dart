@@ -47,9 +47,9 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
     super.die();
     gameRef.add(
       AnimatedGameObject(
-        animation: CommonSpriteSheet.torchAnimated,
+        animation: EnemySpriteSheet.dieAnimation,
         position: position,
-        size: Vector2.all(20),
+        size: Vector2.all(32),
         loop: false,
       ),
     );
