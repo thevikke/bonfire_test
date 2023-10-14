@@ -16,7 +16,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
             size: Vector2.all(64),
             position: position,
             life: 200,
-            speed: 150,         
+            speed: 150,        
           );
 
   @override
@@ -31,6 +31,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
     // TODO can't do if dead or spinning or doing some other cool stuf
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space) {
+       this.animation?.playOther("test");
        execMeleeAttack(attack);
      }
     }
@@ -41,8 +42,9 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
     simpleAttackMelee(
       damage: attack,
       animationRight: PlayerSpriteSheet.epicAttack,
-      size: Vector2.all(20),
+      size: Vector2.all(64),
     );
+    }
 
 // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
@@ -74,4 +76,3 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
 }
- }
