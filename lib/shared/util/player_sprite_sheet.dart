@@ -41,7 +41,7 @@ static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
         "player/bear_slice.png",
         SpriteAnimationData.sequenced(
           amount: 3,
-          stepTime: 0.25,
+          stepTime: 0.15,
           textureSize: Vector2(64, 64),
         ),
       );
@@ -56,7 +56,7 @@ static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
   static Future<SpriteAnimation> get epicAttack {
     return Sprite.load("player/attack_slice.png", srcSize: Vector2.all(64))
         .then((value) {
-      return SpriteAnimation.spriteList([value], stepTime: 1);
+      return SpriteAnimation.spriteList([value], stepTime: 0.3);
     });
   }
 }
