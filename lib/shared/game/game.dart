@@ -19,7 +19,7 @@ class Game extends StatelessWidget {
       player: MyPlayer(Vector2(200, 200)),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
-        zoom: 1.5,
+        zoom: 2,
       ),
     );
   }
