@@ -42,4 +42,11 @@ class PlayerSpriteSheet {
         idleRight: idleRight,
         runRight: runRight,
       );
+
+  static Future<SpriteAnimation> get epicAttack {
+    return Sprite.load("player/knight_run.png", srcSize: Vector2(33, 32))
+        .then((value) {
+      return SpriteAnimation.spriteList([value], stepTime: 1);
+    });
+  }
 }
