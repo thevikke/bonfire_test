@@ -1,18 +1,23 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
+import 'package:flutter/services.dart';
 
 // Random rnd = Random();
 
 // Vector2 randomVector2() => (Vector2.random(rnd) - Vector2.random(rnd)) * 200;
 
-class MyPlayer extends SimplePlayer with BlockMovementCollision {
+class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
+ {
+ double attack = 20;
+ 
   MyPlayer(Vector2 position)
       : super(
             animation: PlayerSpriteSheet.simpleDirectionAnimation,
             size: Vector2.all(32),
             position: position,
             life: 200,
-            speed: 150);
+            speed: 150,         
+          );
 
   @override
   Future<void> onLoad() {
@@ -20,6 +25,24 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision {
     add(RectangleHitbox(size: size));
     return super.onLoad();
   }
+
+  @override
+  void onJoystickAction(JoystickActionEvent event) {
+    // TODO can't do if dead or spinning or doing some other cool stuf
+    if (event.event == ActionEvent.DOWN) {
+      if (event.id == LogicalKeyboardKey.space) {
+       execMeleeAttack(attack);
+     }
+    }
+    super.onJoystickAction(event);
+  }
+
+    void execMeleeAttack(double attack) {
+    simpleAttackMelee(
+      damage: attack,
+      animationRight: PlayerSpriteSheet.epicAttack,
+      size: Vector2.all(20),
+    );
 
 // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
@@ -51,3 +74,4 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision {
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
 }
+ }
