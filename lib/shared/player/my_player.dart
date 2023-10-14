@@ -13,7 +13,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
   MyPlayer(Vector2 position)
       : super(
             animation: PlayerSpriteSheet.simpleDirectionAnimation,
-            size: Vector2.all(32),
+            size: Vector2.all(64),
             position: position,
             life: 200,
             speed: 150,         
