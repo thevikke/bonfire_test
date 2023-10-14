@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
+  bool ableToAttack=true;
   
   late PlayerBarLifeController barLifeController;
 
@@ -39,22 +40,26 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   Future<void> onJoystickAction(JoystickActionEvent event) async {
     // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
-      if (event.id == LogicalKeyboardKey.space) {
+      if (event.id == LogicalKeyboardKey.space && ableToAttack) {
         // super.stopMove();
+        ableToAttack=false;
         speed=0;
         animation?.playOnceOther("attack");
         execMeleeAttack(attack);
         await Future.delayed(Duration(milliseconds: 400));
         speed=150;       
+        ableToAttack=true;
       }
       if (event.id == LogicalKeyboardKey.keyX) {
         // super.stopMove();
+        ableToAttack=false;
         speed=0;
         animation?.playOnceOther("backflip");
         // execMeleeAttack(attack);
         
         await Future.delayed(Duration(milliseconds: 1000));
-        speed=150;       
+        speed=150;   
+        ableToAttack=true;    
       }
     }
     super.onJoystickAction(event);
