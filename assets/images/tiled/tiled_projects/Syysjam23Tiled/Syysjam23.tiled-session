@@ -31,5 +31,6 @@
     "recentFiles": [
         "Syysjam23Map.tmx"
     ],
-    "tileset.embedInMap": true
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFormat": "tsx"
 }
