@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:bonfire_test/controllers/player_bar_life_controller.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
 import 'package:flutter/services.dart';
 
@@ -6,45 +7,79 @@ import 'package:flutter/services.dart';
 
 // Vector2 randomVector2() => (Vector2.random(rnd) - Vector2.random(rnd)) * 200;
 
-class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
- {
- double attack = 20;
- 
+class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
+  double attack = 20;
+  late PlayerBarLifeController barLifeController;
+
   MyPlayer(Vector2 position)
       : super(
-            animation: PlayerSpriteSheet.simpleDirectionAnimation,
-            size: Vector2.all(64),
-            position: position,
-            life: 200,
-            speed: 150,         
-          );
+          animation: PlayerSpriteSheet.simpleDirectionAnimation,
+          size: Vector2.all(64),
+          position: position,
+          // life: 200,
+          speed: 150,
+        );
 
   @override
   Future<void> onLoad() {
-    /// here we configure collision of the enemy
+    /// here we configure collision of the player.
     add(RectangleHitbox(size: size));
     return super.onLoad();
   }
 
   @override
+  void onMount() {
+    barLifeController = PlayerBarLifeController();
+    barLifeController.configure(maxLife: maxLife);
+    super.onMount();
+  }
+
+  @override
   void onJoystickAction(JoystickActionEvent event) {
-    // TODO can't do if dead or spinning or doing some other cool stuf
+    // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space) {
-       execMeleeAttack(attack);
-     }
+        super.stopMove();
+        animation?.playOnceOther("attack");
+        execMeleeAttack(attack);
+      }
     }
     super.onJoystickAction(event);
   }
 
-    void execMeleeAttack(double attack) {
+  void execMeleeAttack(double attack) {
     simpleAttackMelee(
       damage: attack,
       animationRight: PlayerSpriteSheet.epicAttack,
-      size: Vector2.all(20),
+      size: Vector2.all(64),
     );
+  }
 
-// Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
+  @override
+  void update(double dt) {
+    super.update(dt);
+    _updateLife(dt);
+  }
+
+  @override
+  void die() {
+    barLifeController.life = 0.0;
+    removeFromParent();
+    gameRef.add(
+      GameDecoration.withSprite(
+        sprite: Sprite.load('player/crypt.png'),
+        position: position,
+        size: Vector2.all(32),
+      ),
+    );
+    super.die();
+  }
+
+  void _updateLife(double dt) {
+    barLifeController.updateLife(life);
+  }
+
+  // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
   // void update(double dt) {
   //   super.update(dt);
@@ -74,4 +109,3 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
 }
- }
