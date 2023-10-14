@@ -6,10 +6,9 @@ import 'package:flutter/services.dart';
 
 // Vector2 randomVector2() => (Vector2.random(rnd) - Vector2.random(rnd)) * 200;
 
-class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
- {
- double attack = 20;
- 
+class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
+  double attack = 20;
+
   MyPlayer(Vector2 position)
       : super(
             animation: PlayerSpriteSheet.simpleDirectionAnimation,
@@ -28,7 +27,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
 
   @override
   void onJoystickAction(JoystickActionEvent event) {
-    // TODO can't do if dead or spinning or doing some other cool stuf
+    // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space) {
        this.animation?.playOther("test");
@@ -38,7 +37,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
     super.onJoystickAction(event);
   }
 
-    void execMeleeAttack(double attack) {
+  void execMeleeAttack(double attack) {
     simpleAttackMelee(
       damage: attack,
       animationRight: PlayerSpriteSheet.epicAttack,
@@ -46,7 +45,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces
     );
     }
 
-// Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
+  // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
   // void update(double dt) {
   //   super.update(dt);
