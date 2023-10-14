@@ -11,16 +11,16 @@ class Level1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Game(
       map: WorldMapByTiled(
-        'tiled/tiled_projects/test_map/test_map.json',
+        'tiled/tiled_projects/SyysJam23Tiled/SyysJam23Map.json',
         forceTileSize: Vector2(
           32,
           32,
         ),
-        objectsBuilder: {
-          // Loads goblin to a gameobject named 'goblin' in Tiled.
-          'goblin': (properties) => MyEnemy(properties.position),
-          'torch': (properties) => Torch(properties.position, context),
-        },
+        // objectsBuilder: {
+        //   // Loads goblin to a gameobject named 'goblin' in Tiled.
+        //   'goblin': (properties) => MyEnemy(properties.position),
+        //   'torch': (properties) => Torch(properties.position, context),
+        // },
       ),
     );
   }
