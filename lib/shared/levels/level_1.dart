@@ -1,5 +1,5 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:bonfire_test/my_enemy.dart';
+import 'package:bonfire_test/shared/enemies/my_enemy.dart';
 import 'package:bonfire_test/shared/decoration/torch.dart';
 import 'package:bonfire_test/shared/game/game.dart';
 import 'package:flutter/material.dart';
