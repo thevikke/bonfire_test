@@ -7,6 +7,10 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "Ground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "Syysjam23Map.tmx": {
             "scale": 1,
             "selectedLayer": 0,
@@ -20,7 +24,7 @@
         }
     },
     "last.exportedFilePath": "D:/GameProjects/Jam/Syysjam23/assets/images/tiled/tiled_projects/Syysjam23Tiled",
-    "last.imagePath": "D:/Drive/Jam/AutumnJam23/2D/Terrain",
+    "last.imagePath": "D:/GameProjects/Jam/Syysjam23/assets/images/tiled/tiled_projects/Syysjam23Tiled",
     "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "map.width": 20,
@@ -29,6 +33,7 @@
     ],
     "project": "Syysjam23.tiled-project",
     "recentFiles": [
+        "Ground.tsx",
         "Syysjam23Map.tmx"
     ],
     "tileset.embedInMap": false,
