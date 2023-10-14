@@ -18,8 +18,8 @@
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 308,
-                "y": 341
+                "x": 172,
+                "y": 346
             }
         },
         "Syysjam23Map.tmx#Ground": {
@@ -36,8 +36,8 @@
     ],
     "project": "Syysjam23.tiled-project",
     "recentFiles": [
-        "Ground.tsx",
-        "Syysjam23Map.tmx"
+        "Syysjam23Map.tmx",
+        "Ground.tsx"
     ],
     "tileset.embedInMap": false,
     "tileset.lastUsedFormat": "tsx"
