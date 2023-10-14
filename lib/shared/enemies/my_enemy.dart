@@ -53,10 +53,11 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
   @override
   void die() {
     super.die();
+    Future<SpriteAnimation> dieAnim= super.lastDirectionHorizontal==Direction.right?EnemySpriteSheet.dieAnimation:EnemySpriteSheet.dieAnimationLeft;
     _updateEnemies();
     gameRef.add(
       AnimatedGameObject(
-        animation: EnemySpriteSheet.dieAnimation,
+        animation: dieAnim,
         position: position,
         size: Vector2.all(32),
         loop: false,
