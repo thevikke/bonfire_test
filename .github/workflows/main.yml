@@ -26,6 +26,7 @@ jobs:
           git config --global user.email kristian.tuusjarvi@gmail.com
           git config --global user.name thevikke
           git status
+          git add .
           git commit -m "Update deployment."
           git branch -M main
           # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following
