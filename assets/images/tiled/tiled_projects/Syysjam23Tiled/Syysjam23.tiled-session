@@ -1,0 +1,35 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Syysjam23Map.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Syysjam23Map.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 308,
+                "y": 341
+            }
+        },
+        "Syysjam23Map.tmx#Ground": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "D:/GameProjects/Jam/Syysjam23/assets/images/tiled/tiled_projects/Syysjam23Tiled",
+    "last.imagePath": "D:/Drive/Jam/AutumnJam23/2D/Terrain",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 20,
+    "openFiles": [
+        "Syysjam23Map.tmx"
+    ],
+    "project": "Syysjam23.tiled-project",
+    "recentFiles": [
+        "Syysjam23Map.tmx"
+    ],
+    "tileset.embedInMap": true
+}
