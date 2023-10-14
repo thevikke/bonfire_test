@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:bonfire_test/interface/player_interface.dart';
 import 'package:bonfire_test/shared/player/my_player.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class Game extends StatelessWidget {
         directional: JoystickDirectional(),
       ),
       map: map,
+      interface: PlayerInterface(),
       player: MyPlayer(Vector2(200, 200)),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,

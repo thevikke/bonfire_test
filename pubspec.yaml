@@ -71,6 +71,7 @@ flutter:
     - assets/images/
     - assets/images/player/
     - assets/images/enemy/
+    - assets/images/interface/
     - assets/images/items/
     - assets/images/tiled/
     - assets/images/tiled/tileset/
