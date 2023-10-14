@@ -16,11 +16,11 @@ class Level1 extends StatelessWidget {
           32,
           32,
         ),
-        // objectsBuilder: {
-        //   // Loads goblin to a gameobject named 'goblin' in Tiled.
-        //   'goblin': (properties) => MyEnemy(properties.position),
-        //   'torch': (properties) => Torch(properties.position, context),
-        // },
+        objectsBuilder: {
+          // Loads goblin to a gameobject named 'goblin' in Tiled.
+          // 'goblin': (properties) => MyEnemy(properties.position),
+          // 'torch': (properties) => Torch(properties.position, context),
+        },
       ),
     );
   }
