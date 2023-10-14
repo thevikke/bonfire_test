@@ -11,29 +11,29 @@ class PlayerSpriteSheet {
       );
 
   static Future<SpriteAnimation> get idleRight => SpriteAnimation.load(
-        "player/knight_idle.png",
+        "player/bear_idle.png",
         SpriteAnimationData.sequenced(
-          amount: 6,
-          stepTime: 0.1,
-          textureSize: Vector2(16, 16),
+          amount: 2,
+          stepTime: 0.25,
+          textureSize: Vector2(64, 64),
         ),
       );
 
   static Future<SpriteAnimation> get runRight => SpriteAnimation.load(
-        "player/knight_run.png",
+        "player/bear_walk.png",
         SpriteAnimationData.sequenced(
-          amount: 6,
-          stepTime: 0.1,
-          textureSize: Vector2(16, 16),
+          amount: 2,
+          stepTime: 0.25,
+          textureSize: Vector2(64, 64),
         ),
       );
 
   static Future<SpriteAnimation> get runLeft => SpriteAnimation.load(
-        "player/knight_run_left.png",
+        "player/bear_walk_left.png",
         SpriteAnimationData.sequenced(
           amount: 6,
           stepTime: 0.1,
-          textureSize: Vector2(16, 16),
+          textureSize: Vector2(32, 32),
         ),
       );
 
