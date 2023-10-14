@@ -26,7 +26,7 @@ jobs:
           git config --global user.email kristian.tuusjarvi@gmail.com
           git config --global user.name thevikke
           git status
-          # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following:
+          # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following
           git remote add origin https://${{secrets.bonfire_test_secret}}@github.com/thevikke/bonfire_test.git
           git checkout -b gh-pages
           git add --all
