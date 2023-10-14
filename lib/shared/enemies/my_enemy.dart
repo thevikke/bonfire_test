@@ -1,9 +1,11 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:bonfire_test/shared/util/common_spritesheet.dart';
+import 'package:bonfire_test/controllers/player_info_controller.dart';
 import 'package:bonfire_test/shared/util/enemy_sprite_sheet.dart';
 import 'package:flutter/material.dart';
 
 class MyEnemy extends SimpleEnemy with UseLifeBar {
+  late PlayerInfoController infoController;
+
   MyEnemy(Vector2 position)
       : super(
           animation: EnemySpriteSheet.simpleDirectionAnimation,
@@ -17,6 +19,12 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
     /// here we configure collision of the enemy
     add(RectangleHitbox(size: size));
     return super.onLoad();
+  }
+
+ @override
+  void onMount() {
+    infoController = PlayerInfoController();
+    super.onMount();
   }
 
   @override
@@ -45,6 +53,7 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
   @override
   void die() {
     super.die();
+    _updateEnemies();
     gameRef.add(
       AnimatedGameObject(
         animation: EnemySpriteSheet.dieAnimation,
@@ -54,6 +63,10 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
       ),
     );
     removeFromParent();
+  }
+
+  void _updateEnemies() {
+    infoController.updateEnemies(1);
   }
 
   // TODO: Add ranged attack to enemy.
