@@ -7,6 +7,9 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
         "Ground.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
