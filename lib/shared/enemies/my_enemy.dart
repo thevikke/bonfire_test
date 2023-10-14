@@ -33,7 +33,7 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
       closePlayer: (player) {
         /// do anything when close to player
       },
-      radiusVision: 64,
+      radiusVision: 128,
     );
     super.update(dt);
   }
