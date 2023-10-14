@@ -18,7 +18,9 @@ class Level1 extends StatelessWidget {
         ),
         objectsBuilder: {
           // Loads goblin to a gameobject named 'goblin' in Tiled.
-          // 'goblin': (properties) => MyEnemy(properties.position),
+          'goblin(kurkku)': (properties) => MyEnemy(properties.position),
+          'giblin(kurkku)': (properties) => MyEnemy(properties.position),
+          'gublin(kurkku)': (properties) => MyEnemy(properties.position),
           // 'torch': (properties) => Torch(properties.position, context),
         },
       ),
