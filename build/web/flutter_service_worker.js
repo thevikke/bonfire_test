@@ -3,8 +3,8 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "0190e89723788ab86e7809560c6c9a67",
-"assets/AssetManifest.json": "47b721a3ebba058d448b28dd2ae230ef",
+const RESOURCES = {"assets/AssetManifest.bin": "2457b387253dd85ec8e5369a57f05735",
+"assets/AssetManifest.json": "ddb2f8634f969e5419e34adf8e12c7e2",
 "assets/assets/audio/test_sound.mp3": "99aadd6efe3d36496eb822a9da444a8d",
 "assets/assets/images/enemy/atack_effect_bottom.png": "aaeb1a8e791a0f15ba911e1d2540ab32",
 "assets/assets/images/enemy/atack_effect_left.png": "9c99ad913fcc75ce253f8db53faa846f",
@@ -30,6 +30,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "0190e89723788ab86e7809560c6c9a67
 "assets/assets/images/enemy/goblin_idle_left.png": "a7563675f85ed259b2d0aae50ded196b",
 "assets/assets/images/enemy/goblin_run_left.png": "05863189b562610b17a062114c7849a9",
 "assets/assets/images/enemy/goblin_run_right.png": "565c2f9a0bb01a9c56975664f8cd375c",
+"assets/assets/images/enemy/kurkun%2520puhkunta.png": "1bd95e8f8236a3e16647d1f5c565af33",
 "assets/assets/images/interface/health_ui.png": "effe9c92ee658e487859ff0848c4289a",
 "assets/assets/images/items/barrel.png": "dc4d5a9e456b6f1c6ec6fdcc66af7727",
 "assets/assets/images/items/bookshelf.png": "ce2fc17cb8251da9966a3e91bb0b2272",
@@ -71,11 +72,11 @@ const RESOURCES = {"assets/AssetManifest.bin": "0190e89723788ab86e7809560c6c9a67
 "assets/assets/images/tiled/tiled_projects/examples/top_down/tilesheet.json": "03d43534a53b04a4a761aaffc7a3ff71",
 "assets/assets/images/tiled/tiled_projects/examples/top_down/tilesheet.png": "bbd9628ccc0e7734c82ca71591f15c7e",
 "assets/assets/images/tiled/tiled_projects/example_map/untitled.tiled-session": "91ae8e655c434112f2bd8a90299b5fe0",
-"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Ground.png": "62caf44968b25329ca242c3407183bb4",
+"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Ground.png": "ac8cd9ab21d552ce8d13c5ccbdf15537",
 "assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23.tiled-project": "f569bfd3353c5a0faa26a765cae42f0d",
 "assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23.tiled-session": "66702e2bd8f46ebe2d584c3cad6ceb3c",
-"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23Map.json": "11b885021f4b9f7c9af611592b60182d",
-"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23Map.tmx": "400a45f5c5e9855815103caf496b77ac",
+"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23Map.json": "3f6fc325da804f56ec5761dfa98b1a2f",
+"assets/assets/images/tiled/tiled_projects/SyysJam23Tiled/Syysjam23Map.tmx": "d61b84c706b6c12f6a95e3467b9b533a",
 "assets/assets/images/tiled/tiled_projects/test_map/0x72_DungeonTilesetII_v1.3.tsx": "22b487097c63b6cee74f18e05eb037ee",
 "assets/assets/images/tiled/tiled_projects/test_map/mapa1.json": "8e31edf4a48e18fcd921c4866fc369be",
 "assets/assets/images/tiled/tiled_projects/test_map/testi_kartta.tiled-project": "f569bfd3353c5a0faa26a765cae42f0d",
@@ -104,9 +105,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "0190e89723788ab86e7809560c6c9a67
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "d47380bc0c489d217a4458bf81715083",
-"/": "d47380bc0c489d217a4458bf81715083",
-"main.dart.js": "101a7e15bea748bda8841d2e29cb22a8",
+"index.html": "143e8c6d1cfbe2b37ca51646b6fca9b1",
+"/": "143e8c6d1cfbe2b37ca51646b6fca9b1",
+"main.dart.js": "a411363f807cfb90d883efc8bac73974",
 "manifest.json": "a0844743dde288274d7a03ef5551784d",
 "version.json": "412dfc442908f780d292e2a70908ce91"};
 // The application shell files that are downloaded before a service worker can
