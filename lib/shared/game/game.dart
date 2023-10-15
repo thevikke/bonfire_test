@@ -18,7 +18,7 @@ class Game extends StatelessWidget {
       ),
       map: map,
       interface: PlayerInterface(),
-      player: MyPlayer(Vector2(200, 200)),
+      player: MyPlayer(Vector2(740, 440)),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
         zoom: 2,
