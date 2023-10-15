@@ -12,7 +12,7 @@ class MyEnemy extends SimpleEnemy with UseLifeBar, AutomaticRandomMovement {
           animation: EnemySpriteSheet.simpleDirectionAnimation,
           position: position,
           size: Vector2.all(32),
-          life: 100,
+          life: 40,
         );
 
   @override
@@ -33,7 +33,7 @@ class MyEnemy extends SimpleEnemy with UseLifeBar, AutomaticRandomMovement {
     super.update(dt);
     if (!gameRef.sceneBuilderStatus.isRunning) {
      seePlayer(
-        radiusVision: 1000,
+        radiusVision: 150,
         observed: (p) {
           moveTowardsTarget(
             target: p,
