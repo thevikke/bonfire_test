@@ -20,7 +20,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
           animation: PlayerSpriteSheet.simpleDirectionAnimation,
           size: Vector2.all(64),
           position: position,
-          // life: 200,
+          life: 500,
           speed: 150,
         );
 
