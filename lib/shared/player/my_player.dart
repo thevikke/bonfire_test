@@ -62,14 +62,16 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
         // super.stopMove();
         ableToDoCoolShit = false;
         speed = 0;
+        Direction directionBeforeFlip=lastDirection;
         if (lastDirectionHorizontal == Direction.left) {
           animation?.playOnceOther("backflip", flipX: true);
         } else {
           animation?.playOnceOther("backflip");
         }
-        await Future.delayed(const Duration(milliseconds: 1000));
+       await (moveToDirXTimes(lastDirection, 100));
         speed = 150;
         ableToDoCoolShit = true;
+        lastDirection=directionBeforeFlip;
       }
     }
     super.onJoystickAction(event);
@@ -107,6 +109,15 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     barLifeController.updateLife(life);
   }
 
+//TODO: remove this temp function
+Future<void> moveToDirXTimes(Direction dir, double amount) async {
+  for (int i=0; i<amount; i++){
+    _moveToReverseDir(dir,amount);
+    await Future.delayed(const Duration(milliseconds: 5));
+  }
+  return;
+}
+
   // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
   // void update(double dt) {
@@ -135,5 +146,63 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 
   // Vector2 getRandomVector() {
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
+  // }
+
+    void _moveToReverseDir(Direction dir, double speed) {
+    switch(dir){
+      case(Direction.up):{
+        moveDownOnce(speed:40);
+      }
+      case(Direction.upLeft):{
+        moveDownRightOnce(speed:40);
+      }
+      case(Direction.left):{
+        moveRightOnce(speed:40);
+      }
+      case(Direction.downLeft):{
+        moveUpRightOnce(speed:40);
+      }
+      case(Direction.down):{
+        moveUpOnce(speed:40);
+      }
+      case(Direction.downRight):{
+        moveUpLeftOnce(speed:40);
+      }
+      case(Direction.right):{
+        moveLeftOnce(speed:40);
+      }
+      case(Direction.upRight):{
+        moveDownLeftOnce(speed:40);
+      }
+    }
+  }
+
+  //     Direction _reverseDir(Direction dir, double speed) {
+  //   switch(dir){
+  //     case(Direction.up):{
+  //       return(Direction.down);
+  //     }
+  //     case(Direction.upLeft):{
+  //       return(Direction.downRight);
+  //     }
+  //     case(Direction.left):{
+  //       return(Direction.right);
+  //     }
+  //     case(Direction.downLeft):{
+  //       return(Direction.upRight);
+  //     }
+  //     case(Direction.down):{
+  //       return(Direction.up);
+  //     }
+  //     case(Direction.downRight):{
+  //       return(Direction.upLeft);
+  //     }
+  //     case(Direction.right):{
+  //       return(Direction.left);
+  //     }
+  //     case(Direction.upRight):{
+  //       return(Direction.downLeft);
+  //     }
+  //   }
   // }
 }
