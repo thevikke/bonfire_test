@@ -33,7 +33,7 @@ class Splash extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'images/irorrinesplash.png',
+              'assets/images/irorrinesplash.png',
             ),
             TextButton(
               style: TextButton.styleFrom(
