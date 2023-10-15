@@ -13,6 +13,8 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
   bool ableToDoCoolShit = true;
   bool hasMoved=false;
+  bool isFlipping=false;
+  Direction directionBeforeFlip=Direction.right;
   late PlayerBarLifeController barLifeController;
 
   MyPlayer(Vector2 position)
@@ -69,13 +71,15 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
         // super.stopMove();
         ableToDoCoolShit = false;
         speed = 0;
-        Direction directionBeforeFlip = lastDirection;
+        directionBeforeFlip = lastDirection;
+        isFlipping=true;
+        // moveToDirXTimes(lastDirection, 100);
         if (lastDirectionHorizontal == Direction.left) {
-          animation?.playOnceOther("backflip", flipX: true);
+          await animation?.playOnceOther("backflip", flipX: true);
         } else {
-          animation?.playOnceOther("backflip");
+          await animation?.playOnceOther("backflip");
         }
-        await (moveToDirXTimes(lastDirection, 100));
+        isFlipping=false;
         speed = 150;
         ableToDoCoolShit = true;
         lastDirection = directionBeforeFlip;
@@ -94,6 +98,9 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 
   @override
   void update(double dt) {
+    if(isFlipping){
+      moveToDir(directionBeforeFlip);
+    }
     super.update(dt);
     _updateLife(dt);
   }
@@ -132,11 +139,27 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 //TODO: remove this temp function
   Future<void> moveToDirXTimes(Direction dir, double amount) async {
     for (int i = 0; i < amount; i++) {
-      _moveToReverseDir(dir, amount);
+      _moveToReverseDir(dir, 40);
       await Future.delayed(const Duration(milliseconds: 5));
+      if(!isFlipping){
+        break;
+      }
     }
     return;
   }
+
+//TODO: remove this temp function
+  Future<void> moveToDir(Direction dir) async {
+    // for (int i = 0; i < amount; i++) {
+      _moveToReverseDir(dir, 40);
+      // await Future.delayed( Duration(microseconds: int(deltaTime));
+      // if(!isFlipping){
+      //   break;
+      // }
+    // }
+    return;
+  }
+
 
   // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
