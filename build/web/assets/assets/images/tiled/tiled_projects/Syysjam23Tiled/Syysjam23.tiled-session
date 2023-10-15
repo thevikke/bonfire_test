@@ -1,0 +1,45 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Syysjam23Map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "Ground.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Syysjam23Map.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 339.3333333333333,
+                "y": 243.3333333333333
+            }
+        },
+        "Syysjam23Map.tmx#Ground": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "D:/GameProjects/Jam/Syysjam23/assets/images/tiled/tiled_projects/Syysjam23Tiled",
+    "last.imagePath": "D:/GameProjects/Jam/Syysjam23/assets/images/tiled/tiled_projects/Syysjam23Tiled",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 20,
+    "openFiles": [
+        "Syysjam23Map.tmx"
+    ],
+    "project": "Syysjam23.tiled-project",
+    "recentFiles": [
+        "Syysjam23Map.tmx",
+        "Ground.tsx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx"
+}
