@@ -54,10 +54,73 @@ class EnemySpriteSheet {
         ),
       );
 
-  static SimpleDirectionAnimation get simpleDirectionAnimation =>
+      static SimpleDirectionAnimation get simpleDirectionAnimation =>
       SimpleDirectionAnimation(
         idleRight: idleRight,
         runRight: runRight,
-        others: {"die": dieAnimation},
+        others: {"die": dieAnimation,
+                  "attack": attackAnimation},
+      );
+
+  static Future<SpriteAnimation> get attackAnimation => SpriteAnimation.load(
+        "enemy/cumber_yell_spit.png",
+        SpriteAnimationData.sequenced(
+          amount: 2,
+          stepTime: 0.15,
+          textureSize: Vector2(32, 32),
+        ),
+      );
+
+    static Future<SpriteAnimation> get epicAttack => SpriteAnimation.load(
+        "enemy/kurkun puhkunta.png", 
+       SpriteAnimationData.sequenced(
+        amount: 6, 
+        stepTime: 0.2, 
+        textureSize: Vector2(32,32))
+        );
+
+    static Future<SpriteAnimation> get fireBallRight => SpriteAnimation.load(
+        "player/fireball_right.png",
+        SpriteAnimationData.sequenced(
+          amount: 3,
+          stepTime: 0.1,
+          textureSize: Vector2(23, 23),
+        ),
+      );
+
+    static Future<SpriteAnimation> get fireBallLeft => SpriteAnimation.load(
+        "player/fireball_left.png",
+        SpriteAnimationData.sequenced(
+          amount: 3,
+          stepTime: 0.1,
+          textureSize: Vector2(23, 23),
+        ),
+      );
+
+    static Future<SpriteAnimation> get fireBallBottom => SpriteAnimation.load(
+        "player/fireball_bottom.png",
+        SpriteAnimationData.sequenced(
+          amount: 3,
+          stepTime: 0.1,
+          textureSize: Vector2(23, 23),
+        ),
+      );
+
+    static Future<SpriteAnimation> get fireBallTop => SpriteAnimation.load(
+        "player/fireball_top.png",
+        SpriteAnimationData.sequenced(
+          amount: 3,
+          stepTime: 0.1,
+          textureSize: Vector2(23, 23),
+        ),
+      );
+
+      static Future<SpriteAnimation> get explosionAnimation => SpriteAnimation.load(
+        "player/explosion_fire.png",
+        SpriteAnimationData.sequenced(
+          amount: 6,
+          stepTime: 0.1,
+          textureSize: Vector2(32, 32),
+        ),
       );
 }

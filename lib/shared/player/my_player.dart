@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/controllers/player_bar_life_controller.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 
 // Random rnd = Random();
 
@@ -90,6 +91,19 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     super.update(dt);
     _updateLife(dt);
   }
+
+   @override
+    void removeLife(double life) {
+     showDamage(
+       life,
+        config: TextStyle(
+         fontSize: width / 4,
+          color: Colors.red,
+       ),
+      );
+     super.removeLife(life);
+   }
+  	
 
   @override
   void die() {
