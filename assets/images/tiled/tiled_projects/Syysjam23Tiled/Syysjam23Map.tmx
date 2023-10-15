@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="52" height="60" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="5">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="52" height="60" tilewidth="32" tileheight="32" infinite="0" nextlayerid="10" nextobjectid="36">
  <editorsettings>
   <export target="Syysjam23Map.json" format="json"/>
  </editorsettings>
@@ -597,8 +597,38 @@
 </data>
  </layer>
  <objectgroup id="3" name="goblin kurkut">
-  <object id="1" name="goblin(kurkku)" x="975" y="1084" width="33" height="26"/>
-  <object id="2" name="giblin(kurkku)" x="1056" y="1254" width="29" height="28"/>
+  <object id="1" name="goblin(kurkku)" x="983" y="1078.67" width="33" height="26"/>
+  <object id="9" name="goblin(kurkku)" x="595" y="906.667" width="33" height="26"/>
+  <object id="10" name="goblin(kurkku)" x="320.333" y="1068" width="33" height="26"/>
+  <object id="11" name="goblin(kurkku)" x="113.667" y="788" width="33" height="26"/>
+  <object id="12" name="goblin(kurkku)" x="329.667" y="558.667" width="33" height="26"/>
+  <object id="13" name="goblin(kurkku)" x="541.667" y="409.333" width="33" height="26"/>
+  <object id="14" name="goblin(kurkku)" x="748.333" y="636" width="33" height="26"/>
+  <object id="15" name="goblin(kurkku)" x="521.667" y="761.333" width="33" height="26"/>
+  <object id="16" name="goblin(kurkku)" x="1284.33" y="896" width="33" height="26"/>
+  <object id="17" name="goblin(kurkku)" x="1373.67" y="1098.67" width="33" height="26"/>
+  <object id="34" name="goblin(kurkku)" x="1419" y="1294.67" width="33" height="26"/>
+  <object id="35" name="goblin(kurkku)" x="1112.33" y="1428" width="33" height="26"/>
+  <object id="18" name="goblin(kurkku)" x="1245.67" y="1340" width="33" height="26"/>
+  <object id="19" name="goblin(kurkku)" x="988.333" y="942.667" width="33" height="26"/>
+  <object id="20" name="goblin(kurkku)" x="1349.67" y="618.667" width="33" height="26"/>
+  <object id="21" name="goblin(kurkku)" x="781.667" y="750.667" width="33" height="26"/>
+  <object id="22" name="goblin(kurkku)" x="587" y="1021.33" width="33" height="26"/>
+  <object id="23" name="goblin(kurkku)" x="675" y="1204" width="33" height="26"/>
+  <object id="24" name="goblin(kurkku)" x="639" y="1425.33" width="33" height="26"/>
+  <object id="25" name="goblin(kurkku)" x="844.333" y="1377.33" width="33" height="26"/>
+  <object id="26" name="goblin(kurkku)" x="729.667" y="1521.33" width="33" height="26"/>
+  <object id="27" name="goblin(kurkku)" x="1196.33" y="1041.33" width="33" height="26"/>
+  <object id="28" name="goblin(kurkku)" x="115" y="546.667" width="33" height="26"/>
+  <object id="29" name="goblin(kurkku)" x="403" y="412" width="33" height="26"/>
+  <object id="30" name="goblin(kurkku)" x="179" y="340" width="33" height="26"/>
+  <object id="31" name="goblin(kurkku)" x="716.333" y="306.667" width="33" height="26"/>
+  <object id="32" name="goblin(kurkku)" x="1072.33" y="334.667" width="33" height="26"/>
+  <object id="33" name="goblin(kurkku)" x="1241.67" y="412" width="33" height="26"/>
+  <object id="8" name="goblin(kurkku)" x="1060.33" y="1261.33" width="33" height="26"/>
+  <object id="5" name="goblin(kurkku)" x="999" y="779" width="33" height="26"/>
+  <object id="6" name="goblin(kurkku)" x="1076" y="449" width="33" height="26"/>
+  <object id="7" name="goblin(kurkku)" x="1516" y="469" width="33" height="26"/>
  </objectgroup>
  <layer id="7" name="Terrain Objects Over Player" width="52" height="60">
   <data encoding="csv">
