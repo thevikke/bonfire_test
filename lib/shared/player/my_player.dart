@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/controllers/player_bar_life_controller.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ import 'package:flutter/material.dart';
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
   bool ableToDoCoolShit = true;
-
+  bool hasMoved=false;
   late PlayerBarLifeController barLifeController;
 
   MyPlayer(Vector2 position)
@@ -26,6 +27,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   @override
   Future<void> onLoad() {
     /// here we configure collision of the player.
+    FlameAudio.bgm.initialize();
     add(
       RectangleHitbox(
         position: Vector2(16, 16),
@@ -44,6 +46,10 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 
   @override
   Future<void> onJoystickAction(JoystickActionEvent event) async {
+    if(!hasMoved){
+      FlameAudio.bgm.play('ninja_musa_2016_hajaa_edition_loop.mp3');
+      hasMoved=true;
+    }
     // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space && ableToDoCoolShit) {
