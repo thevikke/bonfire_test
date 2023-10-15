@@ -3,10 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "96e891d929c8935778b2d371f47c53b2",
-"assets/AssetManifest.json": "b6b40cefe7e7d5919105a08aeba22a55",
+const RESOURCES = {"assets/AssetManifest.bin": "51c74e4e23c8e86e106ab138b0bdce00",
+"assets/AssetManifest.json": "f65ad58aeae5ecb958c6e53332bae817",
 "assets/assets/audio/ninja_musa_2016_hajaa_edition_loop.mp3": "a806764feb5a8eca61a4d739459bbd2d",
 "assets/assets/audio/test_sound.mp3": "99aadd6efe3d36496eb822a9da444a8d",
+"assets/assets/images/bear.jpg": "4b1a7697c75fc93a05a0f5a8f38f6ed0",
 "assets/assets/images/enemy/atack_effect_bottom.png": "aaeb1a8e791a0f15ba911e1d2540ab32",
 "assets/assets/images/enemy/atack_effect_left.png": "9c99ad913fcc75ce253f8db53faa846f",
 "assets/assets/images/enemy/atack_effect_right.png": "15831f9ccee22a845e854ccb3d18f6e5",
@@ -34,6 +35,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "96e891d929c8935778b2d371f47c53b2
 "assets/assets/images/enemy/kurkun%2520puhkunta.png": "a0b75104bbda0af0431b73d696590754",
 "assets/assets/images/enemy/kurkun%2520puhkunta_left.png": "1bd95e8f8236a3e16647d1f5c565af33",
 "assets/assets/images/interface/health_ui.png": "effe9c92ee658e487859ff0848c4289a",
+"assets/assets/images/irorrinesplash.png": "686acc3949f113fa76512f422cfcdb7f",
 "assets/assets/images/items/barrel.png": "dc4d5a9e456b6f1c6ec6fdcc66af7727",
 "assets/assets/images/items/bookshelf.png": "ce2fc17cb8251da9966a3e91bb0b2272",
 "assets/assets/images/items/chest_spritesheet.png": "bcc8785d27d816e23eca114dd4e708ed",
@@ -89,6 +91,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "96e891d929c8935778b2d371f47c53b2
 "assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.3.png": "99ee27544da829bed54efd1f22e5a588",
 "assets/assets/images/tiled/tileset/0x72_DungeonTilesetII_v1.json": "4ff2b5a15607fe7bd92f708093d0021e",
 "assets/assets/images/tiled/tileset/tileset1.8.tsj": "57a43cb70d463bbcab6c64b56d146ce8",
+"assets/assets/images/youdied.png": "6c9d3a8e17930cdf57260bb8f46c6df4",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "32fce58e2acb9c420eab0fe7b828b761",
 "assets/NOTICES": "c8583af4e10280444fffd8c41b1c2385",
@@ -107,9 +110,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "96e891d929c8935778b2d371f47c53b2
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "2894a8708dc86c4cfd0bda334ecbffdc",
-"/": "2894a8708dc86c4cfd0bda334ecbffdc",
-"main.dart.js": "47b2f42a72c8a8e5b26e7ef730825514",
+"index.html": "7a925d06e4045fd069599851387212e3",
+"/": "7a925d06e4045fd069599851387212e3",
+"main.dart.js": "e2f22e3fcaed8ec8acebbcd6ecbde5e1",
 "manifest.json": "a0844743dde288274d7a03ef5551784d",
 "version.json": "412dfc442908f780d292e2a70908ce91"};
 // The application shell files that are downloaded before a service worker can
