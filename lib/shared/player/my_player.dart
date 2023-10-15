@@ -1,7 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/controllers/player_bar_life_controller.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
-import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +11,9 @@ import 'package:flutter/material.dart';
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
   bool ableToDoCoolShit = true;
-  bool hasMoved=false;
-  bool isFlipping=false;
-  Direction directionBeforeFlip=Direction.right;
+  bool hasMoved = false;
+  bool isFlipping = false;
+  Direction directionBeforeFlip = Direction.right;
   late PlayerBarLifeController barLifeController;
 
   MyPlayer(Vector2 position)
@@ -29,7 +28,6 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   @override
   Future<void> onLoad() {
     /// here we configure collision of the player.
-    FlameAudio.bgm.initialize();
     add(
       RectangleHitbox(
         position: Vector2(16, 16),
@@ -48,9 +46,8 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 
   @override
   Future<void> onJoystickAction(JoystickActionEvent event) async {
-    if(!hasMoved){
-      FlameAudio.bgm.play('ninja_musa_2016_hajaa_edition_loop.mp3');
-      hasMoved=true;
+    if (!hasMoved) {
+      hasMoved = true;
     }
     // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
@@ -72,14 +69,14 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
         ableToDoCoolShit = false;
         speed = 0;
         directionBeforeFlip = lastDirection;
-        isFlipping=true;
+        isFlipping = true;
         // moveToDirXTimes(lastDirection, 100);
         if (lastDirectionHorizontal == Direction.left) {
           await animation?.playOnceOther("backflip", flipX: true);
         } else {
           await animation?.playOnceOther("backflip");
         }
-        isFlipping=false;
+        isFlipping = false;
         speed = 150;
         ableToDoCoolShit = true;
         lastDirection = directionBeforeFlip;
@@ -98,25 +95,24 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 
   @override
   void update(double dt) {
-    if(isFlipping){
+    if (isFlipping) {
       moveToDir(directionBeforeFlip);
     }
     super.update(dt);
     _updateLife(dt);
   }
 
-   @override
-    void removeLife(double life) {
-     showDamage(
-       life,
-        config: TextStyle(
-         fontSize: width / 4,
-          color: Colors.red,
-       ),
-      );
-     super.removeLife(life);
-   }
-  	
+  @override
+  void removeLife(double life) {
+    showDamage(
+      life,
+      config: TextStyle(
+        fontSize: width / 4,
+        color: Colors.red,
+      ),
+    );
+    super.removeLife(life);
+  }
 
   @override
   void die() {
@@ -141,7 +137,7 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     for (int i = 0; i < amount; i++) {
       _moveToReverseDir(dir, 40);
       await Future.delayed(const Duration(milliseconds: 5));
-      if(!isFlipping){
+      if (!isFlipping) {
         break;
       }
     }
@@ -151,15 +147,14 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
 //TODO: remove this temp function
   Future<void> moveToDir(Direction dir) async {
     // for (int i = 0; i < amount; i++) {
-      _moveToReverseDir(dir, 40);
-      // await Future.delayed( Duration(microseconds: int(deltaTime));
-      // if(!isFlipping){
-      //   break;
-      // }
+    _moveToReverseDir(dir, 40);
+    // await Future.delayed( Duration(microseconds: int(deltaTime));
+    // if(!isFlipping){
+    //   break;
+    // }
     // }
     return;
   }
-
 
   // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
