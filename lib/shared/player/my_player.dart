@@ -25,7 +25,12 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   @override
   Future<void> onLoad() {
     /// here we configure collision of the player.
-    add(RectangleHitbox(size: size));
+    add(
+      RectangleHitbox(
+        position: Vector2(16, 16),
+        size: Vector2(32, 32),
+      ),
+    );
     return super.onLoad();
   }
 
