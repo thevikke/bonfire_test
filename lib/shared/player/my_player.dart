@@ -9,8 +9,8 @@ import 'package:flutter/services.dart';
 
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
-  bool ableToDoCoolShit=true;
-  
+  bool ableToDoCoolShit = true;
+
   late PlayerBarLifeController barLifeController;
 
   MyPlayer(Vector2 position)
@@ -42,34 +42,29 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space && ableToDoCoolShit) {
         // super.stopMove();
-        ableToDoCoolShit=false;
-        speed=0;
-        if(lastDirectionHorizontal==Direction.left){
-          animation?.playOnceOther("attack", flipX : true);
-        }
-        else
-        {
+        ableToDoCoolShit = false;
+        speed = 0;
+        if (lastDirectionHorizontal == Direction.left) {
+          animation?.playOnceOther("attack", flipX: true);
+        } else {
           animation?.playOnceOther("attack");
         }
         execMeleeAttack(attack);
-        await Future.delayed(Duration(milliseconds: 400));
-        speed=150;       
-        ableToDoCoolShit=true;
-      }
-      else if (event.id == LogicalKeyboardKey.keyX && ableToDoCoolShit) {
+        await Future.delayed(const Duration(milliseconds: 400));
+        speed = 150;
+        ableToDoCoolShit = true;
+      } else if (event.id == LogicalKeyboardKey.keyX && ableToDoCoolShit) {
         // super.stopMove();
-        ableToDoCoolShit=false;
-        speed=0;
-        if(lastDirectionHorizontal==Direction.left){
-          animation?.playOnceOther("backflip", flipX : true);
-        }
-        else
-        {
+        ableToDoCoolShit = false;
+        speed = 0;
+        if (lastDirectionHorizontal == Direction.left) {
+          animation?.playOnceOther("backflip", flipX: true);
+        } else {
           animation?.playOnceOther("backflip");
         }
-        await Future.delayed(Duration(milliseconds: 1000));
-        speed=150;   
-        ableToDoCoolShit=true;    
+        await Future.delayed(const Duration(milliseconds: 1000));
+        speed = 150;
+        ableToDoCoolShit = true;
       }
     }
     super.onJoystickAction(event);
@@ -136,6 +131,4 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   // Vector2 getRandomVector() {
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
-
-  
 }
