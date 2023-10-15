@@ -17,6 +17,7 @@ class Game extends StatelessWidget {
         directional: JoystickDirectional(),
       ),
       map: map,
+      
       interface: PlayerInterface(),
       player: MyPlayer(Vector2(200, 200)),
       cameraConfig: CameraConfig(

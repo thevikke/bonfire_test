@@ -1,9 +1,11 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:bonfire_test/shared/util/common_spritesheet.dart';
+import 'package:bonfire_test/controllers/player_info_controller.dart';
 import 'package:bonfire_test/shared/util/enemy_sprite_sheet.dart';
 import 'package:flutter/material.dart';
 
 class MyEnemy extends SimpleEnemy with UseLifeBar {
+  late PlayerInfoController infoController;
+
   MyEnemy(Vector2 position)
       : super(
           animation: EnemySpriteSheet.simpleDirectionAnimation,
@@ -19,13 +21,19 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
     return super.onLoad();
   }
 
+ @override
+  void onMount() {
+    infoController = PlayerInfoController();
+    super.onMount();
+  }
+
   @override
   void update(double dt) {
     seeAndMoveToPlayer(
       closePlayer: (player) {
         /// do anything when close to player
       },
-      radiusVision: 64,
+      radiusVision: 128,
     );
     super.update(dt);
   }
@@ -45,15 +53,21 @@ class MyEnemy extends SimpleEnemy with UseLifeBar {
   @override
   void die() {
     super.die();
+    Future<SpriteAnimation> dieAnim= super.lastDirectionHorizontal==Direction.right?EnemySpriteSheet.dieAnimation:EnemySpriteSheet.dieAnimationLeft;
+    _updateEnemies();
     gameRef.add(
       AnimatedGameObject(
-        animation: CommonSpriteSheet.torchAnimated,
+        animation: dieAnim,
         position: position,
-        size: Vector2.all(20),
+        size: Vector2.all(32),
         loop: false,
       ),
     );
     removeFromParent();
+  }
+
+  void _updateEnemies() {
+    infoController.updateEnemies(1);
   }
 
   // TODO: Add ranged attack to enemy.
