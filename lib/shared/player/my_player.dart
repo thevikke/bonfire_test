@@ -2,6 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/controllers/player_bar_life_controller.dart';
 import 'package:bonfire_test/shared/util/player_sprite_sheet.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 
 // Random rnd = Random();
 
@@ -62,16 +63,16 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
         // super.stopMove();
         ableToDoCoolShit = false;
         speed = 0;
-        Direction directionBeforeFlip=lastDirection;
+        Direction directionBeforeFlip = lastDirection;
         if (lastDirectionHorizontal == Direction.left) {
           animation?.playOnceOther("backflip", flipX: true);
         } else {
           animation?.playOnceOther("backflip");
         }
-       await (moveToDirXTimes(lastDirection, 100));
+        await (moveToDirXTimes(lastDirection, 100));
         speed = 150;
         ableToDoCoolShit = true;
-        lastDirection=directionBeforeFlip;
+        lastDirection = directionBeforeFlip;
       }
     }
     super.onJoystickAction(event);
@@ -90,6 +91,19 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     super.update(dt);
     _updateLife(dt);
   }
+
+   @override
+    void removeLife(double life) {
+     showDamage(
+       life,
+        config: TextStyle(
+         fontSize: width / 4,
+          color: Colors.red,
+       ),
+      );
+     super.removeLife(life);
+   }
+  	
 
   @override
   void die() {
@@ -110,13 +124,13 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   }
 
 //TODO: remove this temp function
-Future<void> moveToDirXTimes(Direction dir, double amount) async {
-  for (int i=0; i<amount; i++){
-    _moveToReverseDir(dir,amount);
-    await Future.delayed(const Duration(milliseconds: 5));
+  Future<void> moveToDirXTimes(Direction dir, double amount) async {
+    for (int i = 0; i < amount; i++) {
+      _moveToReverseDir(dir, amount);
+      await Future.delayed(const Duration(milliseconds: 5));
+    }
+    return;
   }
-  return;
-}
 
   // Borrowed code from here: https://github.com/ufrshubham/spacescape/blob/main/lib/game/player.dart.
   // @override
@@ -148,32 +162,40 @@ Future<void> moveToDirXTimes(Direction dir, double amount) async {
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
 
-    void _moveToReverseDir(Direction dir, double speed) {
-    switch(dir){
-      case(Direction.up):{
-        moveDownOnce(speed:40);
-      }
-      case(Direction.upLeft):{
-        moveDownRightOnce(speed:40);
-      }
-      case(Direction.left):{
-        moveRightOnce(speed:40);
-      }
-      case(Direction.downLeft):{
-        moveUpRightOnce(speed:40);
-      }
-      case(Direction.down):{
-        moveUpOnce(speed:40);
-      }
-      case(Direction.downRight):{
-        moveUpLeftOnce(speed:40);
-      }
-      case(Direction.right):{
-        moveLeftOnce(speed:40);
-      }
-      case(Direction.upRight):{
-        moveDownLeftOnce(speed:40);
-      }
+  void _moveToReverseDir(Direction dir, double speed) {
+    switch (dir) {
+      case (Direction.up):
+        {
+          moveDownOnce(speed: 40);
+        }
+      case (Direction.upLeft):
+        {
+          moveDownRightOnce(speed: 40);
+        }
+      case (Direction.left):
+        {
+          moveRightOnce(speed: 40);
+        }
+      case (Direction.downLeft):
+        {
+          moveUpRightOnce(speed: 40);
+        }
+      case (Direction.down):
+        {
+          moveUpOnce(speed: 40);
+        }
+      case (Direction.downRight):
+        {
+          moveUpLeftOnce(speed: 40);
+        }
+      case (Direction.right):
+        {
+          moveLeftOnce(speed: 40);
+        }
+      case (Direction.upRight):
+        {
+          moveDownLeftOnce(speed: 40);
+        }
     }
   }
 

@@ -11,14 +11,14 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      showCollisionArea: true,
+      // showCollisionArea: true,
       joystick: Joystick(
         keyboardConfig: KeyboardConfig(),
         directional: JoystickDirectional(),
       ),
       map: map,
       interface: PlayerInterface(),
-      player: MyPlayer(Vector2(200, 200)),
+      player: MyPlayer(Vector2(740, 440)),
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
         zoom: 2,
