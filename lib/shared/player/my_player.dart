@@ -9,8 +9,8 @@ import 'package:flutter/services.dart';
 
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
-  bool ableToAttack=true;
-  
+  bool ableToAttack = true;
+
   late PlayerBarLifeController barLifeController;
 
   MyPlayer(Vector2 position)
@@ -42,24 +42,24 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
     if (event.event == ActionEvent.DOWN) {
       if (event.id == LogicalKeyboardKey.space && ableToAttack) {
         // super.stopMove();
-        ableToAttack=false;
-        speed=0;
+        ableToAttack = false;
+        speed = 0;
         animation?.playOnceOther("attack");
         execMeleeAttack(attack);
-        await Future.delayed(Duration(milliseconds: 400));
-        speed=150;       
-        ableToAttack=true;
+        await Future.delayed(const Duration(milliseconds: 400));
+        speed = 150;
+        ableToAttack = true;
       }
       if (event.id == LogicalKeyboardKey.keyX) {
         // super.stopMove();
-        ableToAttack=false;
-        speed=0;
+        ableToAttack = false;
+        speed = 0;
         animation?.playOnceOther("backflip");
         // execMeleeAttack(attack);
-        
-        await Future.delayed(Duration(milliseconds: 1000));
-        speed=150;   
-        ableToAttack=true;    
+
+        await Future.delayed(const Duration(milliseconds: 1000));
+        speed = 150;
+        ableToAttack = true;
       }
     }
     super.onJoystickAction(event);
@@ -126,6 +126,4 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   // Vector2 getRandomVector() {
   //   return (Vector2.random(_random) - Vector2(0.5, -1)) * 200;
   // }
-
-  
 }
