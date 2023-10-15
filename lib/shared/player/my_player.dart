@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 
 class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   double attack = 20;
-  bool ableToAttack = true;
+  bool ableToDoCoolShit = true;
 
   late PlayerBarLifeController barLifeController;
 
@@ -40,26 +40,31 @@ class MyPlayer extends SimplePlayer with BlockMovementCollision, HandleForces {
   Future<void> onJoystickAction(JoystickActionEvent event) async {
     // TODO can't do if dead or spinning or doing some other cool stuff.
     if (event.event == ActionEvent.DOWN) {
-      if (event.id == LogicalKeyboardKey.space && ableToAttack) {
+      if (event.id == LogicalKeyboardKey.space && ableToDoCoolShit) {
         // super.stopMove();
-        ableToAttack = false;
+        ableToDoCoolShit = false;
         speed = 0;
-        animation?.playOnceOther("attack");
+        if (lastDirectionHorizontal == Direction.left) {
+          animation?.playOnceOther("attack", flipX: true);
+        } else {
+          animation?.playOnceOther("attack");
+        }
         execMeleeAttack(attack);
         await Future.delayed(const Duration(milliseconds: 400));
         speed = 150;
-        ableToAttack = true;
-      }
-      if (event.id == LogicalKeyboardKey.keyX) {
+        ableToDoCoolShit = true;
+      } else if (event.id == LogicalKeyboardKey.keyX && ableToDoCoolShit) {
         // super.stopMove();
-        ableToAttack = false;
+        ableToDoCoolShit = false;
         speed = 0;
-        animation?.playOnceOther("backflip");
-        // execMeleeAttack(attack);
-
+        if (lastDirectionHorizontal == Direction.left) {
+          animation?.playOnceOther("backflip", flipX: true);
+        } else {
+          animation?.playOnceOther("backflip");
+        }
         await Future.delayed(const Duration(milliseconds: 1000));
         speed = 150;
-        ableToAttack = true;
+        ableToDoCoolShit = true;
       }
     }
     super.onJoystickAction(event);

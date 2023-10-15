@@ -16,7 +16,7 @@ jobs:
           channel: 'stable'
       - run: flutter config --enable-web
       - run: flutter pub get
-      - run: flutter build web  --web-renderer html
+      - run: flutter build web  --web-renderer canvaskit
       - run: |
           cd build/web
           git init
@@ -26,9 +26,9 @@ jobs:
           git config --global user.email kristian.tuusjarvi@gmail.com
           git config --global user.name thevikke
           git status
-          # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following:
-          git remote add origin https://${{secrets.bonfire_test_secret}}@github.com/thevikke/bonfire_test.git
-          git checkout -b gh-pages
-          git add --all
-          git commit -m "update"
-          git push origin gh-pages -f
+          git add .
+          git commit -m "Update deployment."
+          git branch -M main
+          # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following
+          git remote add origin https://${{secrets.bonfire_test_secret}}@github.com/thevikke/thevikke.github.io.git
+          git push -u origin main
