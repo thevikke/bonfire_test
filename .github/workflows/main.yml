@@ -31,4 +31,4 @@ jobs:
           git branch -M main
           # change this remote url for examle your remote url is https://github.com/thevikke/bonfire_test.git then the following
           git remote add origin https://${{secrets.bonfire_test_secret}}@github.com/thevikke/thevikke.github.io.git
-          git push -u origin main
+          git push -u --force origin main 
