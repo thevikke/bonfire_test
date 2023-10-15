@@ -11,7 +11,7 @@ class Level1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Game(
       map: WorldMapByTiled(
-        'tiled/tiled_projects/SyysJam23Tiled/SyysJam23Map.json',
+        'tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.json',
         forceTileSize: Vector2(
           32,
           32,

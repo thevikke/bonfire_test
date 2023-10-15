@@ -11,7 +11,7 @@ class Game extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
-      showCollisionArea: true,
+      // showCollisionArea: true,
       joystick: Joystick(
         keyboardConfig: KeyboardConfig(),
         directional: JoystickDirectional(),
