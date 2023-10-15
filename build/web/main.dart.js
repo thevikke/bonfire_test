@@ -36898,8 +36898,8 @@ a.au(j)
 a.N()
 c=new A.C3(B.H,new A.h(c),1,b,new A.Po(A.x(a0,t.g7),new A.a1o(new A.h(s),new A.h(r),new A.h(q))),i,i,new A.h(p),i,B.aK,B.aK,0,0,0,0,new A.VW(),1,!0,o,!1,!0,A.x(a0,t.eh),i,20,B.re,100,100,!1,0,80,80,0,new A.h(n),new A.h(m),B.H,B.H,B.a6,!0,i,i,i,i,$,l,i,i,i,k,a,B.l,0,i,new A.aj([]),new A.aj([]))
 c.bQ(i,i,i,i,0,i,i,i,i)
-c.OS(500,g,e,150)
-c.OZ(d,B.H,500,g,e,150)
+c.OS(200,g,e,150)
+c.OZ(d,B.H,200,g,e,150)
 return new A.q0(f,c,h,this.c,A.ale(!0,2),i)}}
 A.Bt.prototype={
 a0(a){var s,r,q,p,o,n,m,l,k,j,i,h="tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.json",g=null,f="assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.json",e=new A.h(new Float64Array(2))
