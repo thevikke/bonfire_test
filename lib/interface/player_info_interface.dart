@@ -2,7 +2,7 @@ import 'package:bonfire/bonfire.dart';
 import 'package:bonfire_test/controllers/player_info_controller.dart';
 
 class PlayerInfoInterface extends TextInterfaceComponent {
-  final String infoText = "Enemies defeted: ";
+  final String infoText = "Defeated enemies: ";
   double enemies = 0;
   late PlayerInfoController controller;
 

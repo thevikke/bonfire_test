@@ -68,6 +68,7 @@ flutter:
 
   assets:
     - assets/audio/test_sound.mp3
+    - assets/audio/ninja_musa_2016_hajaa_edition_loop.mp3
     - assets/images/
     - assets/images/player/
     - assets/images/enemy/
