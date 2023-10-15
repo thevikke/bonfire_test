@@ -3,8 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"assets/AssetManifest.bin": "ec05ab30ca649b19c21157311976c86c",
-"assets/AssetManifest.json": "bd6d93b479b942ea449468929e28ad0e",
+const RESOURCES = {"assets/AssetManifest.bin": "96e891d929c8935778b2d371f47c53b2",
+"assets/AssetManifest.json": "b6b40cefe7e7d5919105a08aeba22a55",
+"assets/assets/audio/ninja_musa_2016_hajaa_edition_loop.mp3": "a806764feb5a8eca61a4d739459bbd2d",
 "assets/assets/audio/test_sound.mp3": "99aadd6efe3d36496eb822a9da444a8d",
 "assets/assets/images/enemy/atack_effect_bottom.png": "aaeb1a8e791a0f15ba911e1d2540ab32",
 "assets/assets/images/enemy/atack_effect_left.png": "9c99ad913fcc75ce253f8db53faa846f",
@@ -76,8 +77,8 @@ const RESOURCES = {"assets/AssetManifest.bin": "ec05ab30ca649b19c21157311976c86c
 "assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Ground.png": "222cce7905a9c9fe66755ab0c65ff26a",
 "assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23.tiled-project": "f569bfd3353c5a0faa26a765cae42f0d",
 "assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23.tiled-session": "66702e2bd8f46ebe2d584c3cad6ceb3c",
-"assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.json": "d2fd6b3f1d8bf12a8c76fbc0db3379be",
-"assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.tmx": "630a18690dc8b458b39c587013280d74",
+"assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.json": "907df1198419a8d81decb1a82fc4cfc7",
+"assets/assets/images/tiled/tiled_projects/Syysjam23Tiled/Syysjam23Map.tmx": "d06f8169e6d2198eebb301d76a55d4fc",
 "assets/assets/images/tiled/tiled_projects/test_map/0x72_DungeonTilesetII_v1.3.tsx": "22b487097c63b6cee74f18e05eb037ee",
 "assets/assets/images/tiled/tiled_projects/test_map/mapa1.json": "8e31edf4a48e18fcd921c4866fc369be",
 "assets/assets/images/tiled/tiled_projects/test_map/testi_kartta.tiled-project": "f569bfd3353c5a0faa26a765cae42f0d",
@@ -106,9 +107,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "ec05ab30ca649b19c21157311976c86c
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "2a63c960edab4fbc0df1941a02bc4bcc",
-"/": "2a63c960edab4fbc0df1941a02bc4bcc",
-"main.dart.js": "7da6faa6b2637cf7ca370020c1764e85",
+"index.html": "2894a8708dc86c4cfd0bda334ecbffdc",
+"/": "2894a8708dc86c4cfd0bda334ecbffdc",
+"main.dart.js": "47b2f42a72c8a8e5b26e7ef730825514",
 "manifest.json": "a0844743dde288274d7a03ef5551784d",
 "version.json": "412dfc442908f780d292e2a70908ce91"};
 // The application shell files that are downloaded before a service worker can
